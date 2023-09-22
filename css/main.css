@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+input::-ms-reveal {
+    display: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/images/landing.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: 'Cairo', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    caret-color: transparent;
+    position: relative;
+}
+
+nav ul {
+    color: white;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: inherit;
+    transition: color 400ms;
+}
+
+nav ul li:hover {
+    color: rgb(189, 189, 189);
+}
+
+nav .logo {
+    color: white;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+nav .login-btn {
+    color: white;
+    padding: 8px 18px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: color, border-color, 400ms;
+}
+
+nav .login-btn:hover {
+    color: rgb(189, 189, 189);
+    border-color: rgb(189, 189, 189);
+}
+
+@media (max-width: 600px) {
+
+    nav ul {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 88;
+    }
+}
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 400ms;
+}
+
+.modal .content {
+    background-color: white;
+    width: 300px;
+    border-radius: 10px;
+    padding: 20px;
+    opacity: 0;
+    transform: scale(1.2);
+    transition: opacity, transform, 400ms;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal.active .content {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal .content h3 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #010101;
+}
+
+.modal .content form>div:not(:last-of-type) {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #dfdede;
+    padding: 8px 0;
+    margin-top: 15px;
+}
+
+.modal .content form>div>input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+}
+
+.modal .content form>div>i {
+    color: #a5a4a5;
+    transition: color 400ms;
+}
+
+.modal .content form>div>input+i {
+    color: #a5a4a5;
+    cursor: pointer;
+}
+
+.modal .content form>div:focus-within>i:not(input+i) {
+    color: #ff2200;
+}
+
+.modal .content form .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.modal .content form .wrapper>div>input[type=checkbox] {
+    display: none;
+}
+
+.modal .content form .wrapper>div>label {
+    padding-left: 20px;
+    position: relative;
+    cursor: pointer;
+    caret-color: transparent;
+    color: rgb(73, 73, 73);
+}
+
+.modal .content form .wrapper>div>label::before,
+.modal .content form .wrapper>div>label::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translatey(-50%);
+    border-radius: 2px;
+}
+
+.modal .content form .wrapper>div>label::before {
+    border: 1px solid #a5a4a5;
+    z-index: 1;
+}
+
+.modal .content form .wrapper>div>label::after {
+    content: "\f00c";
+    font-weight: 900;
+    font-family: "font awesome 6 free";
+    color: white;
+    font-size: 8px;
+    background-color: #ff2200;
+    border: 1px solid #ff2200;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translatey(-50%) scale(0);
+    transition: transform 400ms;
+}
+
+.modal .content form .wrapper>div>input:checked+label::after {
+    transform: translatey(-50%) scale(1) rotate(-360deg);
+}
+
+.modal .content form .wrapper a {
+    color: #e54e24;
+    transition: color 400ms;
+}
+
+.modal .content form .wrapper a:hover {
+    color: #ff2200;
+}
+
+.modal .content form>button {
+    padding: 10px;
+    width: 100%;
+    background-color: #e54e24;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 400ms;
+}
+
+.modal .content form>button:hover {
+    background-color: #ff2200;
+}
+
+.modal .content>div {
+    color: black;
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.modal .content>div>a {
+    color: #e54e24;
+    transition: color 400ms;
+    cursor: pointer;
+}
+
+.modal .content>div>a:hover {
+    color: #ff2200;
+}

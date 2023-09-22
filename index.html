@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="#" class="logo">Ibrahim</a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <button class="login-btn" data-action="modal" data-target="#login-modal">Login</button>
+    </nav>
+
+    <div id="login-modal" class="modal">
+        <div class="content">
+            <h3>Login</h3>
+            <form>
+                <div>
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Enter your password">
+                    <i class="fa-regular fa-eye"></i>
+                </div>
+                <div class="wrapper">
+                    <div>
+                        <input id="remember-me" type="checkbox">
+                        <label for="remember-me">Remember Me</label>
+                    </div>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="submit-btn">Login Now</button>
+            </form>
+            <div>
+                Don't have an account? <a data-action="modal" data-target="#Signup-modal" href=" #">Signup</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="Signup-modal" class="modal">
+        <div class="content">
+            <h3>Signup</h3>
+            <form>
+                <div>
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Create password">
+                    <i class="fa-regular fa-eye"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    <input id="password" type="password" placeholder="Create password">
+                    <i class="fa-regular fa-eye"></i>
+                </div>
+                <div></div>
+                <button type="submit" class="submit-btn">Signup Now</button>
+            </form>
+            <div>
+                Already have an account? <a href="#" data-action="modal" data-target="#login-modal">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
